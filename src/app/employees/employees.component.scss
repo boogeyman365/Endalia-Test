@@ -1,0 +1,20 @@
+.navbar {
+  width: 100%;
+  margin: 0;
+  background-color: #1252a1;
+  .container-navbar {
+    color: white;
+    height: 35px;
+    .headerText {
+      padding-left: 15px;
+    }
+    .icon {
+      padding-right: 15px;
+    }
+  }
+}
+
+.employees-content {
+  width: 100%;
+  padding-left: 15px;
+}

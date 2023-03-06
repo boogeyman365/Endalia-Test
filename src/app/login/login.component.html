@@ -1,0 +1,33 @@
+<div class="content-body">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="row-content col-xs-8">
+      <div class="card shadow">
+        <div class="card-body">
+          <img src="../../assets/images/logo.png" alt="logo endalia" class="mx-auto d-block" width="150">
+          <h3 class="card-title text-center mb-4">Iniciar sesión</h3>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+              <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-danger">
+                <div *ngIf="loginForm.get('email')?.hasError('required')">Este campo es obligatorio</div>
+                <div *ngIf="loginForm.get('email')?.hasError('email')">Por favor, introduce un correo electrónico válido</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password" formControlName="password" required>
+              <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-danger">
+                Este campo es obligatorio
+              </div>
+            </div>
+            <button type="submit" [disabled]="chekIsDisabled()" class="btn btn-primary w-100" >
+              <span class="">Acceder</span>
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
