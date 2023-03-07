@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   private responseJSON = [
     {
-      image: '../assets/images/users/user1.jpg',
+      image: '/assets/images/users/user1.jpg',
       surname: 'Abad Jiménez',
       name: 'Ignacio',
       position: 'Responsable de Desarrollo de RRHH',
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user2.jpg',
+      image: '/assets/images/users/user2.jpg',
       surname: 'Aguirre León',
       name: 'Verónica',
       position: 'Operario Sección 1',
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user3.jpg',
+      image: '/assets/images/users/user3.jpg',
       surname: 'Aguirre Ribera',
       name: 'Miguel Ángel',
       position: 'Dirección Comercial',
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user4.jpg',
+      image: '/assets/images/users/user4.jpg',
       surname: 'Alcalá Herrera',
       name: 'Carlos',
       position: 'Auditor de Medioambiente / Encargado de Producción',
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user5.jpg',
+      image: '/assets/images/users/user5.jpg',
       surname: 'Alcalá Ordoñez',
       name: 'Ángela',
       position: 'Administrativo/a',
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user6.jpg',
+      image: '/assets/images/users/user6.jpg',
       surname: 'Álvarez Pineda',
       name: 'Laura',
       position: 'Auditor de Calidad',
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user7.jpg',
+      image: '/assets/images/users/user7.jpg',
       surname: 'Antón Teruel',
       name: 'Pedro',
       position: 'Operario Sección 2 Turno Tarde',
@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user8.jpg',
+      image: '/assets/images/users/user8.jpg',
       surname: 'Aparicio Herrero',
       name: 'Vicente',
       position: 'Coordinador de Ventas Zona Norte',
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user9.jpg',
+      image: '/assets/images/users/user9.jpg',
       surname: 'Ariza Franco',
       name: 'Juan Pedro',
       position: 'Responsable de Proyecto',
@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user10.jpg',
+      image: '/assets/images/users/user10.jpg',
       surname: 'Ariza Hidalgo',
       name: 'Ignacio',
       position: 'Auditor de Medioambiente',
@@ -97,7 +97,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user11.jpg',
+      image: '/assets/images/users/user11.jpg',
       surname: 'Busing Redwine',
       name: 'Hannah',
       position: 'Operario Seccion 2 Turno Día',
@@ -105,7 +105,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user12.jpg',
+      image: '/assets/images/users/user12.jpg',
       surname: 'Bradcof Ruiz',
       name: 'Brieda',
       position: 'Auditora de Proyectos',
@@ -113,7 +113,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user5.jpg',
+      image: '/assets/images/users/user5.jpg',
       surname: 'Alcalá Ordoñez',
       name: 'Ángela',
       position: 'Administrativo/a',
@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit {
       email: 'prueba@endalia.com'
     },
     {
-      image: '../assets/images/users/user6.jpg',
+      image: '/assets/images/users/user6.jpg',
       surname: 'Álvarez Pineda',
       name: 'Laura',
       position: 'Auditor de Calidad',
