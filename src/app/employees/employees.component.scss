@@ -6,7 +6,9 @@
     color: white;
     height: 35px;
     .headerText {
-      padding-left: 15px;
+      padding: 0 !important;
+      font-weight: 400;
+      font-size: 20px;
     }
     .icon {
       padding-right: 15px;
@@ -16,5 +18,44 @@
 
 .employees-content {
   width: 100%;
-  padding-left: 15px;
+  padding-left: 25px;
+
+  form {
+    .card {
+      background-color: #fafafa;
+
+      .employee-image {
+        object-fit: cover;
+      }
+
+      .employee-info {
+        .employee-title {
+          display: block;
+          font-size: 21px;
+          font-weight: bold;
+          text-transform: uppercase;
+          .employee-name {
+            font-size: 19px;
+            font-weight: 500;
+            text-transform: capitalize;
+          }
+        }
+        .employee-position {
+          font-size: 16px;
+        }
+        .employee-phone {
+          color: #8a8a8a;
+          display: block;
+          font-size: 12px;
+          font-style: italic;
+        }
+        .employee-email {
+          color: #8a8a8a;
+          display: block;
+          font-size: 11px;
+          font-style: italic;
+        }
+      }
+    }
+  }
 }

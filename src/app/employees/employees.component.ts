@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Employee } from '../interfaces/employee';
 
 @Component({
   selector: 'app-employees',
@@ -8,111 +9,31 @@ import { Router } from '@angular/router';
 })
 export class EmployeesComponent {
 
-  isLoggedIn = true;
+  isLoggedIn: boolean = true;
   
-  employees = [
-    {
-      image: '../assets/images/user1.jpg',
-      fullName: 'Juan Pérez',
-      position: 'Gerente',
-      phone: '648805252',
-      email: 'juan.perez@compania.com'
-    },
-    {
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },{
-      image: '../assets/images/user1.jpg',
-      fullName: 'María Gómez',
-      position: 'Desarrollador web',
-      phone: '648666666',
-      email: 'maria.gomez@compania.com'
-    },
-    // Agregar más empleados aquí
-  ];
+  employees = JSON.parse(localStorage.getItem('employees')!);
 
-  searchQuery = '';
+  searchQuery: string = '';
 
   constructor(private router: Router) {}
 
   get filteredEmployees() {
-    return this.employees.filter(employee => {
+    return this.employees.filter((employee: Employee) => {
       return (
-        employee.fullName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        employee.position.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        employee.phone.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        employee.email.toLowerCase().includes(this.searchQuery.toLowerCase())
+        this.eliminarDiacriticosEs(employee.surname).toLowerCase().includes(this.eliminarDiacriticosEs(this.searchQuery).toLowerCase()) ||
+        this.eliminarDiacriticosEs(employee.name).toLowerCase().includes(this.eliminarDiacriticosEs(this.searchQuery).toLowerCase()) ||
+        this.eliminarDiacriticosEs(employee.position).toLowerCase().includes(this.eliminarDiacriticosEs(this.searchQuery).toLowerCase()) ||
+        this.eliminarDiacriticosEs(employee.phone).toLowerCase().includes(this.eliminarDiacriticosEs(this.searchQuery).toLowerCase()) ||
+        this.eliminarDiacriticosEs(employee.email).toLowerCase().includes(this.eliminarDiacriticosEs(this.searchQuery).toLowerCase())
       );
     });
+  }
+
+  eliminarDiacriticosEs(texto: string) {
+    return texto
+           .normalize('NFD')
+           .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,"$1")
+           .normalize();
   }
 
   logout() {

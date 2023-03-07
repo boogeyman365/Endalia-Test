@@ -1,6 +1,6 @@
 <nav class="row navbar sticky-top">
   <div class="container-navbar d-flex">
-    <h4 class="p-1 w-100 navbar-brand headerText">Endalia HR</h4>
+    <p class="p-1 w-100 navbar-brand headerText">Endalia HR</p>
     <div class="p-1 flex-shrink-1 icon" (click)="logout()" role="button"><i class="bi-box-arrow-right"></i></div>
   </div>
 </nav>
@@ -9,21 +9,21 @@
 
   <form class="my-3">
     <div class="row">
-      <div class="input-group mb-4 w-50">
-        <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="searchQuery" name="search">
+      <div class="mb-4 col-xs-12 col-md-6">
+        <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchQuery" name="search">
       </div>
     </div>
 
     <div class="row justify-content-between">
       <div class="col-sm-12 col-md-6" *ngFor="let employee of filteredEmployees">
         <div class="card mb-4">
-          <div class="card-body d-flex align-items-center">
-            <img src="{{employee.image}}" alt="{{employee.fullName}}" class="rounded-circle me-3" width="140" height="140">
-            <div>
-              <h5 class="card-title mb-0">{{employee.fullName}}</h5>
-              <small class="text-muted">{{employee.position}}</small>
-              <p class="my-1">{{employee.phone}}</p>
-              <p class="my-1">{{employee.email}}</p>
+          <div class="card-body d-flex flex-wrap align-items-center">
+            <img src="{{employee.image}}" alt="{{employee.name}}" class="employee-image rounded-circle me-3" width="120" height="120">
+            <div class="employee-info">
+              <span class="employee-title mb-0">{{employee.surname}}<span class="employee-name">, {{employee.name}}</span></span>
+              <span class="employee-position">{{employee.position}}</span>
+              <small class="employee-phone my-1">{{employee.phone}}</small>
+              <small class="employee-email my-1">{{employee.email}}</small>
             </div>
           </div>
         </div>
