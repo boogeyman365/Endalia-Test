@@ -38,6 +38,7 @@ export class EmployeesComponent {
 
   logout() {
     this.isLoggedIn = false;
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }
